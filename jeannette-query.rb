@@ -30,8 +30,8 @@ collections.each do |coll_name|
 end
 
 # Declare ship and voyage IDs so we can access Jeannette records using them (I just went in and found these manually)
-j_ship_id = BSON::ObjectId('50a27fd77438ae05bd000002')
-j_voyage_id = BSON::ObjectId('50874f4d09d4090755026717')
+j_ship_id = BSON.ObjectId('50a27fd77438ae05bd000002')
+j_voyage_id = BSON.ObjectId('50874f4d09d4090755026717')
 
 puts 'Initial setup complete' # Output status to shell
 
