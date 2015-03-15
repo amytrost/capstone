@@ -11,6 +11,9 @@ require 'fileutils'
 require 'json'
 include Mongo
 
+# Import our custom methods
+# require_relative 'lib/mixins'
+
 # Initialize Mongo client
 client = MongoClient.new
 
@@ -20,9 +23,8 @@ db = client.db('oldWeather3-production-live') # Database
 # Get path to this script
 script_path = File.dirname(__FILE__)
 
-# Array of collection names we'll use
+# Array of collection names we'll use (does not include unneeded collections)
 collections = ['annotations', 'assets', 'entities', 'ships', 'transcriptions', 'voyages']
-# Full list of collection names: ["annotations", "system.indexes", "assets", "collection_sources", "entities", "ships", "system.users", "templates", "transcriptions", "voyages", "zooniverse_users"]
 
 # For each collection name in the above array, check if a directory for that collection exists; if not, make one
 collections.each do |coll_name|
