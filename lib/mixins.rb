@@ -2,7 +2,7 @@
 
 # Extend Enumerable with method to generate formatted JSON
 module Enumerable
-  def p_json
+  def to_pretty_json
     JSON.pretty_generate(self)
   end
 end

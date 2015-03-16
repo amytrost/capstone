@@ -7,7 +7,7 @@ require 'fileutils'
 require 'json'
 include Mongo
 
-# Import our custom additions
+# Import our custom methods
 require_relative 'lib/mixins'
 
 # Initialize Mongo client
@@ -37,4 +37,4 @@ end
 
 # assets = db['assets'].find("_id" => "50874f4f09d4090755026771".to_bson_id).to_a
 
-# annotations.each { |i| File.open("#{i['_id']}.json", 'w') { |f| f.write(i.p_json) } }
+# annotations.each { |i| File.open("#{i['_id']}.json", 'w') { |f| f.write(i.to_pretty_json) } }
